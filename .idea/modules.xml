@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AllSLow/AllSLow.iml" filepath="$PROJECT_DIR$/AllSLow/AllSLow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/allSlow.iml" filepath="$PROJECT_DIR$/.idea/allSlow.iml" />
+    </modules>
+  </component>
+</project>
