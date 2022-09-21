@@ -1,4 +1,5 @@
 package com.exam.allslow;
 
-public class CalenderController {
+public class CalenderController{
+
 }
