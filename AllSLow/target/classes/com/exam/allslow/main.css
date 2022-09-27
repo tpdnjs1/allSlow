@@ -3,6 +3,11 @@
     -fx-background-color: rgba(0, 0, 0, 0);
 }
 
+.btn:hover {
+    -fx-border-color: #F2A5A0;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+
 .bar {
     -fx-background-color: rgba(0, 0, 0, 0.3);
 }
