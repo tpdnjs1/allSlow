@@ -1,0 +1,16 @@
+.btn {
+    -fx-border-color: rgba(0, 0, 0, 0);
+    -fx-background-color: rgba(0, 0, 0, 0);
+}
+
+.btn:hover {
+    
+}
+
+.bar {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+}
+
+#Outground {
+    -fx-background-color: #64B385;
+}
