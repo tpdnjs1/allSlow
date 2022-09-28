@@ -2,7 +2,6 @@
     -fx-border-color: rgba(0, 0, 0, 0);
     -fx-background-color: rgba(0, 0, 0, 0);
 }
-
 .btn:hover {
     -fx-border-color: #F2A5A0;
     -fx-border-width: 0px 0px 3px 0px;
@@ -14,4 +13,16 @@
 
 #Outground {
     -fx-background-color: #64B385;
+}
+
+#background {
+    -fx-background-color: #ffffff;
+}
+
+.diaryFont {
+    -fx-font-family: "EF_Diary";
+}
+
+.KyoboFont {
+    -fx-font-family: "KyoboHandwriting2020pdy";
 }

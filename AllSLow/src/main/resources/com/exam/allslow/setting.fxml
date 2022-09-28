@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane id="background" prefHeight="500.0" prefWidth="370.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.SettingController">
-
+   <children>
+      <Label layoutX="170.0" layoutY="243.0" text="세팅" />
+   </children>
 </AnchorPane>

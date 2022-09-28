@@ -4,14 +4,15 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
 <AnchorPane id="Outground" prefHeight="600.0" prefWidth="400.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.MainController">
     <children>
-        <AnchorPane layoutX="15.0" layoutY="15.0" prefHeight="500.0" prefWidth="370.0" />
+      <BorderPane fx:id="pane" layoutX="15.0" layoutY="15.0" prefHeight="500.0" prefWidth="370.0" />
         <Pane layoutY="530.0" prefHeight="70.0" prefWidth="400.0" styleClass="bar" stylesheets="@main.css">
             <children>
-                <Button layoutX="15.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@main.css">
+                <Button layoutX="15.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onMouseClicked="#calendarPage" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@main.css">
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -19,7 +20,7 @@
                      </image></ImageView>
                     </graphic>
                 </Button>
-                <Button layoutX="95.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@main.css">
+                <Button layoutX="95.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#foodPage" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@main.css">
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -27,7 +28,7 @@
                      </image></ImageView>
                     </graphic>
                 </Button>
-                <Button layoutX="175.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@main.css">
+                <Button layoutX="175.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#exercisePage" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@main.css">
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -35,7 +36,7 @@
                      </image></ImageView>
                     </graphic>
                 </Button>
-                <Button layoutX="255.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@main.css">
+                <Button layoutX="255.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#communityPage" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@main.css">
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -43,7 +44,7 @@
                      </image></ImageView>
                     </graphic>
                 </Button>
-                <Button layoutX="335.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@main.css">
+                <Button layoutX="335.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#settingPage" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@main.css">
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
