@@ -20,24 +20,20 @@ public class MainController implements Initializable {
 
     @FXML
     private void calendarPage(MouseEvent event){
-        loadPage("calender");
+        loadPage("calendar");
     }
-
     @FXML
     private void communityPage(MouseEvent event){
         loadPage("community");
     }
-
     @FXML
     private void exercisePage(MouseEvent event){
         loadPage("exercise");
     }
-
     @FXML
     private void foodPage(MouseEvent event){
         loadPage("food");
     }
-
     @FXML
     private void settingPage(MouseEvent event){
         loadPage("setting");
@@ -45,9 +41,11 @@ public class MainController implements Initializable {
 
     @FXML
     private BorderPane pane;
+
+    //이거 계속 오류남
     public void loadPage(String page) {
         try {
-            Parent nextScene = FXMLLoader.load(getClass().getResource(page+".fxml"));
+            Parent nextScene = FXMLLoader.load(getClass().getClassLoader().getResource(page+".fxml"));
             pane.setCenter(nextScene);
         } catch (IOException e) {
             e.printStackTrace();

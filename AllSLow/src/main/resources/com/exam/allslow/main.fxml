@@ -16,7 +16,7 @@
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@calendar.png" />
+                        <Image url="@images/calendar.png" />
                      </image></ImageView>
                     </graphic>
                 </Button>
@@ -24,7 +24,7 @@
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@salad.png" />
+                        <Image url="@images/salad.png" />
                      </image></ImageView>
                     </graphic>
                 </Button>
@@ -32,7 +32,7 @@
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@dumbbell.png" />
+                        <Image url="@images/dumbbell.png" />
                      </image></ImageView>
                     </graphic>
                 </Button>
@@ -40,7 +40,7 @@
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@community.png" />
+                        <Image url="@images/community.png" />
                      </image></ImageView>
                     </graphic>
                 </Button>
@@ -48,7 +48,7 @@
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@settings.png" />
+                        <Image url="@images/settings.png" />
                      </image></ImageView>
                     </graphic>
                 </Button>
