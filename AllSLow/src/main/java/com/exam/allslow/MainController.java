@@ -19,23 +19,27 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    private void calendarPage(MouseEvent event){
+    private void calendarPage(MouseEvent event) {
         loadPage("calendar");
     }
+
     @FXML
-    private void communityPage(MouseEvent event){
+    private void communityPage(MouseEvent event) {
         loadPage("community");
     }
+
     @FXML
-    private void exercisePage(MouseEvent event){
+    private void exercisePage(MouseEvent event) {
         loadPage("exercise");
     }
+
     @FXML
-    private void foodPage(MouseEvent event){
+    private void foodPage(MouseEvent event) {
         loadPage("food");
     }
+
     @FXML
-    private void settingPage(MouseEvent event){
+    private void settingPage(MouseEvent event) {
         loadPage("setting");
     }
 
@@ -45,7 +49,7 @@ public class MainController implements Initializable {
     //이거 계속 오류남
     public void loadPage(String page) {
         try {
-            Parent nextScene = FXMLLoader.load(getClass().getClassLoader().getResource(page+".fxml"));
+            Parent nextScene = FXMLLoader.load(getClass().getClassLoader().getResource(page + ".fxml"));
             pane.setCenter(nextScene);
         } catch (IOException e) {
             e.printStackTrace();
