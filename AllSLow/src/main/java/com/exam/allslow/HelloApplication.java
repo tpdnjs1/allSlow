@@ -20,17 +20,7 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
 
-        Stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-            @Override
-            public void handle(final WindowEvent event) {
-                MainController mc = loader.getController();
-                mc.stopThread();
-            }
-        });
-
-    } catch(Exception e) {
-        e.printStackTrace();
-    }
+       
 }//여기부터 고칠 것
 
     public static void main(String[] args) {
