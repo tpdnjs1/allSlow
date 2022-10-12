@@ -3,14 +3,14 @@ package com.exam.allslow;
 import javafx.application.Platform;
 import javafx.scene.control.Label;
 
-public class CountTread extends Thread {
+public class CountThread extends Thread {
 
     private Label h;
     private Label m;
     private Label s;
     private long sec;
 
-    public CountTread(Label h, Label m, Label s, long sec) {
+    public CountThread(Label h, Label m, Label s, long sec) {
         this.h = h;
         this.m = m;
         this.s = s;

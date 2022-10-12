@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 
@@ -15,14 +16,23 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
     }
 
     @FXML
+    private BorderPane pane;
+
+
+    @FXML
     private void calendarPage(MouseEvent event) {
-        loadPage("calendar");
+        try {
+            Parent nextScene = FXMLLoader.load(getClass().getClassLoader().getResource("calendar.fxml"));
+            pane.setCenter(nextScene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
+    
     @FXML
     private void communityPage(MouseEvent event) {
         loadPage("community");
@@ -43,8 +53,7 @@ public class MainController implements Initializable {
         loadPage("setting");
     }
 
-    @FXML
-    private BorderPane pane;
+
 
     //이거 계속 오류남
     public void loadPage(String page) {

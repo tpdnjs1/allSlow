@@ -21,12 +21,13 @@ public class ExerciseController {
     @FXML
     private Button stopBtn;
 
-    private CountTread thread;
+    private CountThread thread;
     private boolean status = false;
 
     @FXML
     private void initialize() {
-        thread = new CountTread(hour, minute, second, 0);
+
+        thread = new CountThread(hour, minute, second, 0);
     }
 
     public void start() {

@@ -1,5 +1,8 @@
 package com.exam.allslow;
 
+import javafx.event.EventHandler;
+import javafx.stage.WindowEvent;
+
 public class NullMain {
 
     public static void main(String[] arg) {
@@ -15,6 +18,8 @@ public class NullMain {
         r.run();
 
     }
+
+
 
 
 }
