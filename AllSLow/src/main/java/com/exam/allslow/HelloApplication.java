@@ -1,10 +1,12 @@
 package com.exam.allslow;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 
@@ -20,7 +22,13 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
 
-       
+       stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+           @Override
+           public void handle(final WindowEvent windowEvent) {
+               ExerciseController timer = new ExerciseController();
+               timer.stopThread();
+           }
+       });
 }//여기부터 고칠 것
 
     public static void main(String[] args) {
