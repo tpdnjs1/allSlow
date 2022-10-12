@@ -34,8 +34,8 @@ public class MainController implements Initializable {
 
     
     @FXML
-    private void communityPage(MouseEvent event) {
-        loadPage("community");
+    private void checkpage(MouseEvent event) {
+        loadPage("check");
     }
 
     @FXML
