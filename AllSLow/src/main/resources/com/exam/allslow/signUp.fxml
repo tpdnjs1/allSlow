@@ -12,32 +12,36 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="400.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.SignUpController">
    <children>
-      <Pane prefHeight="70.0" prefWidth="400.0">
+      <Pane prefHeight="70.0" prefWidth="400.0" styleClass="green_bar">
          <children>
-            <Button layoutX="10.0" layoutY="15.0" maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0">
-               <graphic>
-                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/back_arrow.png" />
-                     </image>
-                  </ImageView>
-               </graphic></Button>
-            <Label layoutX="146.0" layoutY="24.0" text="회원가입하기">
+            <Button layoutX="10.0" layoutY="15.0" maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btn" />
+            <Label layoutX="146.0" layoutY="24.0" text="회원가입하기" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font></Label>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="11.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/back_arrow.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
-      <Label layoutX="77.0" layoutY="169.0" text="아이디" />
-      <TextField layoutX="181.0" layoutY="153.0" />
-      <Label layoutX="82.0" layoutY="192.0" text="*동일한 아이디가 존재합니다." textFill="RED" />
+      <Label layoutX="88.0" layoutY="147.0" text="아이디">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <TextField layoutX="150.0" layoutY="140.0" prefHeight="35.0" prefWidth="185.0" />
+      <Label layoutX="112.0" layoutY="187.0" text="*동일한 아이디가 존재합니다." textFill="RED">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
       <Label layoutX="82.0" layoutY="248.0" text="비밀번호" />
-      <PasswordField layoutX="181.0" layoutY="226.0" />
+      <PasswordField layoutX="154.0" layoutY="238.0" prefHeight="35.0" prefWidth="185.0" />
       <Label layoutX="44.0" layoutY="310.0" text="비밀번호 확인" />
-      <PasswordField layoutX="181.0" layoutY="306.0" />
+      <PasswordField layoutX="181.0" layoutY="306.0" prefHeight="35.0" prefWidth="185.0" />
       <Button layoutX="173.0" layoutY="484.0" mnemonicParsing="false" text="Button" />
       <Label layoutX="137.0" layoutY="339.0" text="입력된 비밀번호와 일치하지않습니다." />
       <Label layoutX="112.0" layoutY="379.0" text="이메일" />
-      <TextField layoutX="181.0" layoutY="375.0" />
+      <TextField layoutX="181.0" layoutY="375.0" prefHeight="35.0" prefWidth="185.0" />
    </children>
 </AnchorPane>

@@ -11,6 +11,10 @@
     -fx-background-color: rgba(0, 0, 0, 0.3);
 }
 
+.green_bar {
+    -fx-background-color: #5DA67B;
+}
+
 #Outground {
     -fx-background-color: #64B385;
 }
