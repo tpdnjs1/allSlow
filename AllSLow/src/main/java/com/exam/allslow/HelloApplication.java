@@ -18,7 +18,7 @@ public class HelloApplication extends Application {
 
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("exercise.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 400, 600);
-            stage.setTitle("느루");
+            stage.setTitle("시방 엿같다");
             stage.setScene(scene);
             stage.show();
 

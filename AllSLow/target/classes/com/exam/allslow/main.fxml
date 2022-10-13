@@ -12,15 +12,15 @@
       <BorderPane fx:id="pane" layoutX="15.0" layoutY="15.0" prefHeight="500.0" prefWidth="370.0" />
         <Pane layoutY="530.0" prefHeight="70.0" prefWidth="400.0" styleClass="bar" stylesheets="@main.css">
             <children>
-                <Button layoutX="15.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#calendarPage" onMouseClicked="#calendarPage" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@main.css">
+                <Button layoutX="45.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#calendarPage" onMouseClicked="#calendarPage" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@main.css">
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/check.png" />
+                        <Image url="@images/calendar.png" />
                      </image></ImageView>
                     </graphic>
                 </Button>
-                <Button layoutX="95.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#foodPage" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@main.css">
+                <Button layoutX="135.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#foodPage" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@main.css">
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -28,19 +28,11 @@
                      </image></ImageView>
                     </graphic>
                 </Button>
-                <Button layoutX="175.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#exercisePage" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@main.css">
+                <Button layoutX="225.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#exercisePage" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@main.css">
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/dumbbell.png" />
-                     </image></ImageView>
-                    </graphic>
-                </Button>
-                <Button layoutX="255.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@main.css">
-                    <graphic>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/community.png" />
                      </image></ImageView>
                     </graphic>
                 </Button>
