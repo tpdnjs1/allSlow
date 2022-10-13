@@ -33,10 +33,6 @@ public class MainController implements Initializable {
     }
 
     
-    @FXML
-    private void checkpage(MouseEvent event) {
-        loadPage("check");
-    }
 
     @FXML
     private void exercisePage(MouseEvent event) {

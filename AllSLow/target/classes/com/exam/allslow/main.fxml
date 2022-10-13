@@ -16,7 +16,7 @@
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/calendar.png" />
+                        <Image url="@images/check.png" />
                      </image></ImageView>
                     </graphic>
                 </Button>
@@ -36,7 +36,7 @@
                      </image></ImageView>
                     </graphic>
                 </Button>
-                <Button layoutX="255.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#communityPage" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@main.css">
+                <Button layoutX="255.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@main.css">
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
