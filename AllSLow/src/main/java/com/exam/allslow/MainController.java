@@ -24,12 +24,7 @@ public class MainController implements Initializable {
 
     @FXML
     private void calendarPage(MouseEvent event) {
-        try {
-            Parent nextScene = FXMLLoader.load(getClass().getClassLoader().getResource("calendar.fxml"));
-            pane.setCenter(nextScene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadPage("calendar");
     }
 
     
@@ -50,11 +45,9 @@ public class MainController implements Initializable {
     }
 
 
-
-    //이거 계속 오류남
     public void loadPage(String page) {
         try {
-            Parent nextScene = FXMLLoader.load(getClass().getClassLoader().getResource(page + ".fxml"));
+            Parent nextScene = FXMLLoader.load(getClass().getResource(page + ".fxml"));
             pane.setCenter(nextScene);
         } catch (IOException e) {
             e.printStackTrace();

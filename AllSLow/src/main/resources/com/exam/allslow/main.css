@@ -23,14 +23,6 @@
     -fx-background-color: #ffffff;
 }
 
-.diaryFont {
-    -fx-font-family: "EF_Diary";
-}
-
-.KyoboFont_12 {
-    -fx-font-family: "KyoboHandwriting2020A", "KyoboHandwriting2020pdy";
-    -fx-font-size: 12;
-}
 
 #starting {
     -fx-background-image: url("images/background_salad.jpg");

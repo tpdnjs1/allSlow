@@ -16,14 +16,14 @@ public class HelloApplication extends Application {
         Font.loadFont(getClass().getResourceAsStream("/resources/EF_Diary.ttf"), 16);
         Font.loadFont(getClass().getResourceAsStream("/resources/KyoboHandwriting2020pdy.ttf"), 16);
 
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("exercise.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 400, 600);
-            stage.setTitle("시방 엿같다");
-            stage.setScene(scene);
-            stage.show();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("main.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 400, 600);
+        stage.setTitle("극뽁!");
+        stage.setScene(scene);
+        stage.show();
 
 
-}
+    }
 
     public static void main(String[] args) {
         launch(args);
