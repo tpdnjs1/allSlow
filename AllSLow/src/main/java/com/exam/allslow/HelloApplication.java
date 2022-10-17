@@ -22,6 +22,10 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
 
+        stage.setOnCloseRequest((e) ->{
+            ExerciseController timer = fxmlLoader.load().getClass();
+            timer.stopThread();
+        });
 
     }
 
