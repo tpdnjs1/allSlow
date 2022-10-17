@@ -16,7 +16,7 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        loadPage("calendar");
+        loadPage("exercise");
     }
 
     @FXML
@@ -27,8 +27,6 @@ public class MainController implements Initializable {
     private void calendarPage(MouseEvent event) {
         loadPage("calendar");
     }
-
-    
 
     @FXML
     private void exercisePage(MouseEvent event) {

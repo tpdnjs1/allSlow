@@ -26,7 +26,6 @@ public class ExerciseController {
 
     @FXML
     private void initialize() {
-
         thread = new CountThread(hour, minute, second, 0);
     }
 
