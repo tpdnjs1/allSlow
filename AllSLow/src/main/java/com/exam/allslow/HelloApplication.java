@@ -16,7 +16,7 @@ public class HelloApplication extends Application {
         Font.loadFont(getClass().getResourceAsStream("/resources/EF_Diary.ttf"), 16);
         Font.loadFont(getClass().getResourceAsStream("/resources/KyoboHandwriting2020pdy.ttf"), 16);
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("main.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("signIn.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 400, 600);
         stage.setTitle("glgl!");
         stage.setScene(scene);
