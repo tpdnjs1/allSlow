@@ -1,0 +1,44 @@
+
+#starting {
+    -fx-background-image: url("images/background_salad.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
+.green_bar {
+    -fx-background-color: #5DA67B;
+}
+
+.imageBtn {
+    -fx-border-color: rgba(0, 0, 0, 0);
+    -fx-background-color: rgba(0, 0, 0, 0);
+}
+
+
+.pane {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 10, 0, 5, 5);
+}
+
+.bar {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+}
+
+.btn {
+    -fx-background-color: #F2A5A0;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #592420;
+    -fx-text-fill: #000000;
+    -fx-padding: 3 10 3 10;
+}
+
+.btn:hover{
+    -fx-background-color: #A6625D;
+    -fx-text-fill: #ffffff;
+}
+
+.hyperlink:hover{
+    -fx-text-fill: #88F2B4;
+}

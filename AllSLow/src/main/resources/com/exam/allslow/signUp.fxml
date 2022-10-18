@@ -13,20 +13,22 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="400.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.SignUpController">
+<AnchorPane prefHeight="600.0" prefWidth="400.0" stylesheets="@sign.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.SignUpController">
    <children>
       <Pane prefHeight="70.0" prefWidth="400.0" styleClass="green_bar">
          <children>
-            <Button layoutX="10.0" layoutY="15.0" maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btn" />
-            <Label layoutX="146.0" layoutY="24.0" text="회원가입하기" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="17.0" maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="btn">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/back_arrow.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Label layoutX="145.0" layoutY="25.0" text="회원가입하기" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font></Label>
-            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="11.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/back_arrow.png" />
-               </image>
-            </ImageView>
          </children>
       </Pane>
       <Label layoutX="88.0" layoutY="107.0" text="아이디" textAlignment="RIGHT">
@@ -60,6 +62,29 @@
       <TextField layoutX="145.0" layoutY="285.0" prefHeight="35.0" prefWidth="185.0" />
       <Text fill="#a6625d" layoutX="194.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="◈" />
       <Line endX="300.0" endY="340.0" startX="100.0" startY="340.0" stroke="#a6625d" />
-      <ChoiceBox layoutX="206.0" layoutY="385.0" prefWidth="150.0" />
+      <Label layoutX="104.0" layoutY="367.0" text="성별" textAlignment="RIGHT">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ChoiceBox layoutX="145.0" layoutY="360.0" prefHeight="35.0" prefWidth="160.0" />
+      <Label layoutX="88.0" layoutY="424.0" text="나이" textAlignment="RIGHT">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField layoutX="145.0" layoutY="416.0" prefHeight="35.0" prefWidth="160.0" />
+      <Label layoutX="29.0" layoutY="451.0" text="키" textAlignment="RIGHT">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField layoutX="69.0" layoutY="480.0" prefHeight="35.0" prefWidth="85.0" />
+      <Label layoutX="29.0" layoutY="477.0" text="몸무게" textAlignment="RIGHT">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField layoutX="253.0" layoutY="480.0" prefHeight="35.0" prefWidth="85.0" />
    </children>
 </AnchorPane>

@@ -2,28 +2,29 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="starting" prefHeight="600.0" prefWidth="400.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.SignInController">
+<AnchorPane id="starting" prefHeight="600.0" prefWidth="400.0" stylesheets="@sign.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.SignInController">
    <children>
       <Pane prefHeight="600.0" prefWidth="400.0" styleClass="bar" />
-      <Pane layoutX="48.0" layoutY="139.0" prefHeight="320.0" prefWidth="291.0" styleClass="bar">
+      <Pane layoutX="48.0" layoutY="139.0" prefHeight="320.0" prefWidth="291.0" styleClass="pane">
          <children>
-            <Label layoutX="123.0" layoutY="40.0" styleClass="KyoboFont_20" text="느루" textFill="WHITE">
+            <Label layoutX="110.0" layoutY="34.0" styleClass="KyoboFont_20" text="느루" textFill="WHITE">
                <font>
-                  <Font size="24.0" />
+                  <Font size="36.0" />
                </font>
             </Label>
-            <TextField layoutX="90.0" layoutY="162.0" prefHeight="30.0" prefWidth="180.0" />
-            <TextField layoutX="90.0" layoutY="116.0" prefHeight="30.0" prefWidth="180.0" />
-            <Label layoutX="31.0" layoutY="170.0" text="비밀번호" textFill="WHITE" />
-            <Label layoutX="31.0" layoutY="124.0" text="아이디" textFill="WHITE" />
-            <Button layoutX="120.0" layoutY="233.0" mnemonicParsing="false" styleClass="KyoboFont_12" text="로그인" />
-            <Label layoutX="31.0" layoutY="281.0" text="느루 앱은 처음이신가요? |" textFill="WHITE" />
-            <Label fx:id="signUpBtn" layoutX="180.0" layoutY="281.0" text="회원가입 하기" textFill="WHITE" />
+            <Label layoutX="43.0" layoutY="122.0" text="아이디" textFill="WHITE" />
+            <TextField layoutX="90.0" layoutY="115.0" prefHeight="30.0" prefWidth="180.0" />
+            <Label layoutX="31.0" layoutY="167.0" text="비밀번호" textFill="WHITE" />
+            <PasswordField layoutX="90.0" layoutY="160.0" prefHeight="30.0" prefWidth="180.0" />
+            <Button layoutX="112.0" layoutY="226.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" styleClass="btn" text="로그인" textFill="WHITE" />
+            <Label layoutX="31.0" layoutY="280.0" text="느루 앱은 처음이신가요? |" textFill="WHITE" />
+            <Label fx:id="signUpBtn" layoutX="175.0" layoutY="277.0" styleClass="hyperlink" text="회원가입 하기" textFill="WHITE" />
          </children>
       </Pane>
    </children>
