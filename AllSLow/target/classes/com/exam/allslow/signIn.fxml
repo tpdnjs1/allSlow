@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="starting" prefHeight="600.0" prefWidth="400.0" stylesheets="@sign.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.SignInController">
+<AnchorPane id="starting" prefHeight="600.0" prefWidth="400.0" stylesheets="@sign.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.SignInController">
    <children>
       <Pane prefHeight="600.0" prefWidth="400.0" styleClass="bar" />
       <Pane layoutX="48.0" layoutY="139.0" prefHeight="320.0" prefWidth="291.0" styleClass="pane">
@@ -22,9 +22,9 @@
             <TextField fx:id="id" layoutX="90.0" layoutY="115.0" prefHeight="30.0" prefWidth="180.0" />
             <Label layoutX="31.0" layoutY="167.0" text="비밀번호" textFill="WHITE" />
             <PasswordField fx:id="pw" layoutX="90.0" layoutY="160.0" prefHeight="30.0" prefWidth="180.0" />
-            <Button fx:id="loginBtn" layoutX="112.0" layoutY="226.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" styleClass="btn" text="로그인" textFill="WHITE" />
+            <Button fx:id="loginBtn" layoutX="112.0" layoutY="226.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="70.0" styleClass="btn" text="로그인" textFill="WHITE" />
             <Label layoutX="31.0" layoutY="280.0" text="느루 앱은 처음이신가요? |" textFill="WHITE" />
-            <Label fx:id="hyperlink" onMouseClicked="#signUp" layoutX="175.0" layoutY="277.0" styleClass="hyperlink" text="회원가입 하기" textFill="WHITE" />
+            <Label fx:id="hyperlink" layoutX="175.0" layoutY="277.0" onMouseClicked="#moveSignUp" styleClass="hyperlink" text="회원가입 하기" textFill="WHITE" />
          </children>
       </Pane>
    </children>

@@ -34,7 +34,18 @@ public class SignInController implements Initializable {
         hyperlink.setUnderline(true);
     }
 
-    public void signUp() {
+    public void login() {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("main.fxml"));
+            Scene scene = new Scene(parent);
+            Stage stage = (Stage) loginBtn.getScene().getWindow();
+            stage.setScene(scene);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void moveSignUp() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("signUp.fxml"));
             Scene scene = new Scene(root);
@@ -44,5 +55,6 @@ public class SignInController implements Initializable {
             e.printStackTrace();
         }
     }
-
 }
+
+
