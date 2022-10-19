@@ -36,7 +36,7 @@
             <Font size="16.0" />
          </font></Label>
       <TextField fx:id="id" layoutX="145.0" layoutY="100.0" prefHeight="35.0" prefWidth="185.0" />
-      <Label fx:id="warnId" layoutX="100.0" layoutY="140.0" text="*동일한 아이디가 존재합니다." textFill="RED">
+      <Label fx:id="warnId" layoutX="100.0" layoutY="140.0" textFill="RED">
          <font>
             <Font size="13.0" />
          </font></Label>
@@ -50,7 +50,7 @@
             <Font size="16.0" />
          </font></Label>
       <PasswordField layoutX="145.0" layoutY="205.0" prefHeight="35.0" prefWidth="185.0" />
-      <Label fx:id="warnPw" layoutX="100.0" layoutY="245.0" text="*입력된 비밀번호와 일치하지않습니다." textFill="RED">
+      <Label fx:id="warnPw" layoutX="100.0" layoutY="245.0" textFill="RED">
          <font>
             <Font size="13.0" />
          </font></Label>
@@ -67,7 +67,7 @@
          </font>
       </Label>
       <ChoiceBox fx:id="sex" layoutX="145.0" layoutY="340.0" prefHeight="35.0" prefWidth="160.0" />
-      <Label fx:id="warnSex" layoutX="100.0" layoutY="380.0" text="*성별이 선택되지 않았습니다." textFill="RED">
+      <Label fx:id="warnSex" layoutX="100.0" layoutY="380.0" textFill="RED">
          <font>
             <Font size="13.0" />
          </font>
@@ -78,7 +78,7 @@
          </font>
       </Label>
       <TextField fx:id="age" layoutX="145.0" layoutY="400.0" prefHeight="35.0" prefWidth="160.0" promptText="세" />
-      <Label fx:id="warnAge" layoutX="100.0" layoutY="440.0" text="*나이가 입력되지 않았습니다." textFill="RED">
+      <Label fx:id="warnAge" layoutX="100.0" layoutY="440.0" textFill="RED">
          <font>
             <Font size="13.0" />
          </font>
@@ -95,7 +95,7 @@
          </font>
       </Label>
       <TextField fx:id="weight" layoutX="260.0" layoutY="460.0" prefHeight="35.0" prefWidth="85.0" promptText="kg" />
-      <Label fx:id="warnSize" layoutX="100.0" layoutY="500.0" text="*키 또는 몸무게가 입력되지 않았습니다." textFill="RED">
+      <Label fx:id="warnSize" layoutX="100.0" layoutY="500.0" textFill="RED">
          <font>
             <Font size="13.0" />
          </font>
