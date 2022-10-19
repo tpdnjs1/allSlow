@@ -18,8 +18,6 @@ public class SignUpController implements Initializable {
     @FXML
     private PasswordField pw;
     @FXML
-    private PasswordField checkPw;
-    @FXML
     private TextField email;
     @FXML
     private TextField age;
@@ -44,7 +42,9 @@ public class SignUpController implements Initializable {
     @FXML
     private Label warnAge;
     @FXML
-    private Label warnSize;
+    private Label warnTall;
+    @FXML
+    private Label warnWeight;
 
     private boolean warn;
 
@@ -94,8 +94,6 @@ public class SignUpController implements Initializable {
 
         if (pw.getText().isBlank()) {
             warnPw.setText("*비밀번호가 입력되지 않았습니다.");
-        } else if (!pw.getText().equals(checkPw.getText())) {
-            warnPw.setText("*입력된 비밀번호와 일치하지않습니다.");
         } else {
             warnPw.setText("");
             pass++;
@@ -113,19 +111,41 @@ public class SignUpController implements Initializable {
         if (age.getText().isBlank()) {
             warnAge.setText("*나이가 입력되지 않았습니다.");
         } else {
-            warnAge.setText("*숫자 외 다른 문자가 입력되었습니다.");
+            try {
+                int num = Integer.parseInt(age.getText());
+                warnAge.setText("");
+                pass++;
+            }catch (NumberFormatException e){
+                warnAge.setText("*숫자 외 다른 문자가 입력되었습니다.");
+            }
         }
-        warnAge.setText("");
-        pass++;
 
-        if (tall.getText().isBlank() || weight.getText().isBlank()) {
-            warnSize.setText("*키 또는 몸무게가 입력되지 않았습니다.");
+
+        if (tall.getText().isBlank()) {
+            warnTall.setText("*키가 입력되지 않았습니다.");
         } else {
-            warnSize.setText("");
-            pass++;
+            try {
+                int num = Integer.parseInt(tall.getText());
+                warnTall.setText("");
+                pass++;
+            }catch (NumberFormatException e){
+                warnTall.setText("*키에 숫자 외 다른 문자가 입력되었습니다.");
+            }
         }
 
-        if (pass == 5) {
+        if (weight.getText().isBlank()){
+            warnWeight.setText("*몸무게가 입력되지 않았습니다.");
+        } else {
+            try {
+                int num = Integer.parseInt(weight.getText());
+                warnWeight.setText("");
+                pass++;
+            }catch (NumberFormatException e){
+                warnWeight.setText("*몸무게에 숫자 외 다른 문자가 입력되었습니다.");
+            }
+        }
+
+        if (pass == 6) {
             warn = false;
         } else {
             warn = true;

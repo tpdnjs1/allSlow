@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="400.0" stylesheets="@sign.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.SignUpController">
+<AnchorPane prefHeight="600.0" prefWidth="400.0" stylesheets="@sign.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.SignUpController">
    <children>
       <Pane prefHeight="70.0" prefWidth="400.0" styleClass="green_bar">
          <children>
@@ -31,75 +31,75 @@
                </font></Label>
          </children>
       </Pane>
-      <Label layoutX="88.0" layoutY="107.0" text="아이디" textAlignment="RIGHT">
+      <Label layoutX="88.0" layoutY="132.0" text="아이디" textAlignment="RIGHT">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <TextField fx:id="id" layoutX="145.0" layoutY="100.0" prefHeight="35.0" prefWidth="185.0" />
-      <Label fx:id="warnId" layoutX="100.0" layoutY="140.0" textFill="RED">
+      <TextField fx:id="id" layoutX="145.0" layoutY="125.0" prefHeight="35.0" prefWidth="185.0" />
+      <Label fx:id="warnId" layoutX="100.0" layoutY="165.0" textFill="RED">
          <font>
             <Font size="13.0" />
          </font></Label>
-      <Label layoutX="72.0" layoutY="167.0" text="비밀번호" textAlignment="RIGHT">
+      <Label layoutX="72.0" layoutY="192.0" text="비밀번호" textAlignment="RIGHT">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <PasswordField fx:id="pw" layoutX="145.0" layoutY="160.0" prefHeight="35.0" prefWidth="185.0" />
-      <Label layoutX="37.0" layoutY="212.0" text="비밀번호 확인" textAlignment="RIGHT">
-         <font>
-            <Font size="16.0" />
-         </font></Label>
-      <PasswordField layoutX="145.0" layoutY="205.0" prefHeight="35.0" prefWidth="185.0" />
-      <Label fx:id="warnPw" layoutX="100.0" layoutY="245.0" textFill="RED">
+      <PasswordField fx:id="pw" layoutX="145.0" layoutY="185.0" prefHeight="35.0" prefWidth="185.0" />
+      <Label fx:id="warnPw" layoutX="100.0" layoutY="225.0" textFill="RED">
          <font>
             <Font size="13.0" />
          </font></Label>
-      <Label layoutX="88.0" layoutY="272.0" text="이메일" textAlignment="RIGHT">
+      <Label layoutX="88.0" layoutY="252.0" text="이메일" textAlignment="RIGHT">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <TextField fx:id="email" layoutX="145.0" layoutY="265.0" prefHeight="35.0" prefWidth="185.0" />
-      <Text fill="#a6625d" layoutX="194.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="◈" />
-      <Line endX="300.0" endY="320.0" startX="100.0" startY="320.0" stroke="#a6625d" />
-      <Label layoutX="104.0" layoutY="347.0" text="성별" textAlignment="RIGHT">
+      <TextField fx:id="email" layoutX="145.0" layoutY="245.0" prefHeight="35.0" prefWidth="185.0" />
+      <Text fill="#a6625d" layoutX="195.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="◈" />
+      <Line endX="300.0" endY="320.0" layoutY="-20.0" startX="100.0" startY="320.0" stroke="#a6625d" />
+      <Label layoutX="104.0" layoutY="327.0" text="성별" textAlignment="RIGHT">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="sex" layoutX="145.0" layoutY="340.0" prefHeight="35.0" prefWidth="160.0" />
-      <Label fx:id="warnSex" layoutX="100.0" layoutY="380.0" textFill="RED">
+      <ChoiceBox fx:id="sex" layoutX="145.0" layoutY="320.0" prefHeight="35.0" prefWidth="160.0" />
+      <Label fx:id="warnSex" layoutX="100.0" layoutY="360.0" textFill="RED">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Label layoutX="104.0" layoutY="407.0" text="나이" textAlignment="RIGHT">
+      <Label layoutX="104.0" layoutY="387.0" text="나이" textAlignment="RIGHT">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="age" layoutX="145.0" layoutY="400.0" prefHeight="35.0" prefWidth="160.0" promptText="세" />
-      <Label fx:id="warnAge" layoutX="100.0" layoutY="440.0" textFill="RED">
+      <TextField fx:id="age" layoutX="145.0" layoutY="380.0" prefHeight="35.0" prefWidth="160.0" promptText="세" />
+      <Label fx:id="warnAge" layoutX="100.0" layoutY="420.0" textFill="RED">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Label layoutX="80.0" layoutY="467.0" text="키" textAlignment="RIGHT">
+      <Label layoutX="80.0" layoutY="447.0" text="키" textAlignment="RIGHT">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="tall" layoutX="105.0" layoutY="460.0" prefHeight="35.0" prefWidth="85.0" promptText="cm" />
-      <Label layoutX="203.0" layoutY="467.0" text="몸무게" textAlignment="RIGHT">
+      <TextField fx:id="tall" layoutX="105.0" layoutY="440.0" prefHeight="35.0" prefWidth="85.0" promptText="cm" />
+      <Label layoutX="203.0" layoutY="447.0" text="몸무게" textAlignment="RIGHT">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="weight" layoutX="260.0" layoutY="460.0" prefHeight="35.0" prefWidth="85.0" promptText="kg" />
-      <Label fx:id="warnSize" layoutX="100.0" layoutY="500.0" textFill="RED">
+      <TextField fx:id="weight" layoutX="260.0" layoutY="440.0" prefHeight="35.0" prefWidth="85.0" promptText="kg" />
+      <Label fx:id="warnTall" layoutX="100.0" layoutY="480.0" textFill="RED">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Button fx:id="signUpBtn" layoutX="150.0" layoutY="545.0" mnemonicParsing="false" onAction="#signUp" prefHeight="40.0" prefWidth="100.0" styleClass="btn" text="가입하기" />
+      <Label fx:id="warnWeight" layoutX="100.0" layoutY="500.0" textFill="RED">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="signUpBtn" layoutX="150.0" layoutY="530.0" mnemonicParsing="false" onAction="#signUp" prefHeight="40.0" prefWidth="100.0" styleClass="btn" text="가입하기" />
    </children>
 </AnchorPane>
