@@ -52,20 +52,6 @@ public class SignUpController implements Initializable {
     private boolean warn;
 
 
-    DBManager db = new DBManager();
-    Connection conn = db.getConnection();
-
-    PreparedStatement pstmt = null;
-    ResultSet rs = null;
-        /*String sql = "SELECT * FROM `user` WHERE `id` = " + checkingId;
-
-        try {
-            pstmt = conn.prepareStatement(sql);
-            rs = pstmt.executeQuery();
-        } catch (Exception e){
-            e.printStackTrace();
-        }*/
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         sex.getItems().addAll("남성", "여성");
@@ -97,27 +83,33 @@ public class SignUpController implements Initializable {
         }
     }
 
+    DBManager db = new DBManager();
+    Connection conn = db.getConnection();
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+
     private void canSignUp() {
         int pass = 0;
 
         if (id.getText().isBlank()) {
             warnId.setText("*아이디가 입력되지 않았습니다.");
-        /*} else if () {
-            warnId.setText("*동일한 아이디가 존재합니다.");
-        */
         } else if (id.getText().length() > 20) {
             warnId.setText("*아이디는 20자를 넘을 수 없습니다.");
         } else {
-            String sql = "SELECT * FROM `user` WHERE `id` = '" + id.getText()+ "'";
-
+            boolean idPass = true;
+            String sql = "SELECT * FROM `user` WHERE `id` = '" + id.getText() + "'";
             try {
                 pstmt = conn.prepareStatement(sql);
                 rs = pstmt.executeQuery();
             } catch (Exception e) {
-                e.printStackTrace();
+                idPass = false;
             }
-            warnId.setText("");
-            pass++;
+            if (idPass) {
+                warnId.setText("");
+                pass++;
+            } else {
+                warnId.setText("*동일한 아이디가 존재합니다.");
+            }
         }
 
         if (pw.getText().isBlank()) {
