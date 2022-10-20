@@ -9,6 +9,9 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
 public class SignUpController implements Initializable {
@@ -47,6 +50,21 @@ public class SignUpController implements Initializable {
     private Label warnWeight;
 
     private boolean warn;
+
+
+    DBManager db = new DBManager();
+    Connection conn = db.getConnection();
+
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+        /*String sql = "SELECT * FROM `user` WHERE `id` = " + checkingId;
+
+        try {
+            pstmt = conn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+        } catch (Exception e){
+            e.printStackTrace();
+        }*/
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -87,13 +105,25 @@ public class SignUpController implements Initializable {
         /*} else if () {
             warnId.setText("*동일한 아이디가 존재합니다.");
         */
+        } else if (id.getText().length() > 20) {
+            warnId.setText("*아이디는 20자를 넘을 수 없습니다.");
         } else {
+            String sql = "SELECT * FROM `user` WHERE `id` = '" + id.getText()+ "'";
+
+            try {
+                pstmt = conn.prepareStatement(sql);
+                rs = pstmt.executeQuery();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             warnId.setText("");
             pass++;
         }
 
         if (pw.getText().isBlank()) {
             warnPw.setText("*비밀번호가 입력되지 않았습니다.");
+        } else if (pw.getText().length() > 20) {
+            warnPw.setText("*비밀번호는 20자를 넘을 수 없습니다.");
         } else {
             warnPw.setText("");
             pass++;
@@ -115,7 +145,7 @@ public class SignUpController implements Initializable {
                 int num = Integer.parseInt(age.getText());
                 warnAge.setText("");
                 pass++;
-            }catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 warnAge.setText("*숫자 외 다른 문자가 입력되었습니다.");
             }
         }
@@ -128,19 +158,19 @@ public class SignUpController implements Initializable {
                 int num = Integer.parseInt(tall.getText());
                 warnTall.setText("");
                 pass++;
-            }catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 warnTall.setText("*키에 숫자 외 다른 문자가 입력되었습니다.");
             }
         }
 
-        if (weight.getText().isBlank()){
+        if (weight.getText().isBlank()) {
             warnWeight.setText("*몸무게가 입력되지 않았습니다.");
         } else {
             try {
                 int num = Integer.parseInt(weight.getText());
                 warnWeight.setText("");
                 pass++;
-            }catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 warnWeight.setText("*몸무게에 숫자 외 다른 문자가 입력되었습니다.");
             }
         }

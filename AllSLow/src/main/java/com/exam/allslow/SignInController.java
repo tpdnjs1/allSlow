@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -32,9 +33,13 @@ public class SignInController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         hyperlink.setUnderline(true);
+
     }
 
+
     public void login() {
+
+
         try {
             Parent parent = FXMLLoader.load(getClass().getResource("main.fxml"));
             Scene scene = new Scene(parent);
@@ -55,6 +60,7 @@ public class SignInController implements Initializable {
             e.printStackTrace();
         }
     }
-}
+
+    }
 
 

@@ -12,7 +12,7 @@ public class HelloApplication extends Application {
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("signIn.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 400, 600);
-        stage.setTitle("시방!");
+        stage.setTitle("느루");
         stage.setScene(scene);
         stage.show();
 
