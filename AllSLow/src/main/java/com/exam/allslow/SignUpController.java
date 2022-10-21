@@ -49,9 +49,6 @@ public class SignUpController implements Initializable {
     @FXML
     private Label warnWeight;
 
-    private boolean warn;
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         sex.getItems().addAll("남성", "여성");
@@ -69,24 +66,42 @@ public class SignUpController implements Initializable {
         }
     }
 
-    public void signUp() {
-        canSignUp();
-        if (!warn) {
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
-                Scene scene = new Scene(root);
-                Stage stage = (Stage) signUpBtn.getScene().getWindow();
-                stage.setScene(scene);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
     DBManager db = new DBManager();
     Connection conn = db.getConnection();
     PreparedStatement pstmt = null;
     ResultSet rs = null;
+
+    private boolean warn;
+
+    public void signUp() {
+        canSignUp();
+        if (!warn) {
+            String sql = "INSERT INTO `user`(`id`, `pw`, `email`, `sex`, `age`, `tall`, `weight`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            try {
+                pstmt = conn.prepareStatement(sql);
+                pstmt.setString(1, id.getText());
+                pstmt.setString(2, pw.getText());
+                pstmt.setString(3, email.getText());
+                pstmt.setString(4, sex.getValue());
+                pstmt.setString(5, age.getText());
+                pstmt.setString(6, tall.getText());
+                pstmt.setString(7, weight.getText());
+                pstmt.executeUpdate();
+
+                try {
+                    Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
+                    Scene scene = new Scene(root);
+                    Stage stage = (Stage) signUpBtn.getScene().getWindow();
+                    stage.setScene(scene);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+    }
 
     private void canSignUp() {
         int pass = 0;
@@ -96,20 +111,25 @@ public class SignUpController implements Initializable {
         } else if (id.getText().length() > 20) {
             warnId.setText("*아이디는 20자를 넘을 수 없습니다.");
         } else {
-            boolean idPass = true;
             String sql = "SELECT * FROM `user` WHERE `id` = '" + id.getText() + "'";
             try {
                 pstmt = conn.prepareStatement(sql);
                 rs = pstmt.executeQuery();
-            } catch (Exception e) {
-                idPass = false;
-            }
-            if (idPass) {
+
                 warnId.setText("");
                 pass++;
-            } else {
-                warnId.setText("*동일한 아이디가 존재합니다.");
+
+                while (rs.next()) {
+                    if (rs.getString("id").equals(id.getText())) {
+                        warnId.setText("*동일한 아이디가 존재합니다.");
+                        pass--;
+                        break;
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
+
         }
 
         if (pw.getText().isBlank()) {
