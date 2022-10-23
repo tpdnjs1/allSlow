@@ -8,14 +8,19 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="starting" prefHeight="600.0" prefWidth="400.0" stylesheets="@sign.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.SignInController">
+<AnchorPane id="starting" prefHeight="600.0" prefWidth="400.0" stylesheets="@sign.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.SignInController">
    <children>
       <Pane prefHeight="600.0" prefWidth="400.0" styleClass="bar" />
       <Pane layoutX="48.0" layoutY="139.0" prefHeight="320.0" prefWidth="291.0" styleClass="pane">
          <children>
-            <Label layoutX="110.0" layoutY="34.0" styleClass="KyoboFont_20" text="느루" textFill="WHITE">
+            <Label layoutX="110.0" layoutY="30.0" styleClass="KyoboFont_20" text="느루" textFill="WHITE">
                <font>
                   <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="45.0" layoutY="75.0" text=": 한꺼번에 몰아치지 않고 오래도록" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
                </font>
             </Label>
             <Label layoutX="43.0" layoutY="122.0" text="아이디" textFill="WHITE" />

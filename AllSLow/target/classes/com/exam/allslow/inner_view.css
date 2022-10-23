@@ -1,0 +1,73 @@
+
+
+#background {
+    -fx-background-color: #ffffff;
+}
+
+.green_bar {
+    -fx-background-color: #5DA67B;
+}
+
+.imageBtn {
+    -fx-border-color: rgba(0, 0, 0, 0);
+    -fx-background-color: rgba(0, 0, 0, 0);
+}
+
+.shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 10, 0, 5, 5);
+}
+
+.innerText {
+   -fx-effect: innershadow(three-pass-box, rgba(0,0,0,0.7), 6, 0.0 , 0 , 2);
+   -fx-text-fill: #88F2B4;
+}
+
+.pane {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+    -fx-background-radius: 10px;
+}
+
+.bar {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+}
+
+.round {
+    -fx-background-radius: 100px;
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 100px;
+    -fx-border-color: #64B385;
+}
+
+.btn_new {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 30px;
+    -fx-text-fill: #592420;
+    -fx-border-radius: 30px;
+    -fx-border-color: #592420;
+}
+
+.btn_new:hover{
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 10, 0, 5, 5);
+}
+
+.btn {
+    -fx-background-color: #F2A5A0;
+    -fx-background-radius: 30px;
+    -fx-text-fill: #ffffff;
+    -fx-border-radius: 30px;
+    -fx-border-color: #592420;
+}
+
+
+.btn:selected{
+    -fx-background-color: #A6625D;
+    -fx-text-fill: #ffffff;
+}
+
+.btn:hover{
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 10, 0, 5, 5);
+}
+
+.hyperlink:hover{
+    -fx-text-fill: #88F2B4;
+}

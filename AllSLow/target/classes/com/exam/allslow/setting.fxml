@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 
-<AnchorPane id="background" prefHeight="500.0" prefWidth="370.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.SettingController">
+<AnchorPane id="background" prefHeight="500.0" prefWidth="370.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.SettingController">
    <children>
-      <Label layoutX="170.0" layoutY="243.0" text="세팅" />
+      <Circle fill="#1f93ff00" layoutX="71.0" layoutY="65.0" radius="40.0" stroke="#592420" strokeType="INSIDE" />
+      <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="31.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

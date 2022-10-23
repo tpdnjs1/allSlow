@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="400.0" stylesheets="@sign.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.SignUpController">
+<AnchorPane prefHeight="600.0" prefWidth="400.0" stylesheets="@sign.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.SignUpController">
    <children>
       <Pane prefHeight="70.0" prefWidth="400.0" styleClass="green_bar">
          <children>
@@ -31,29 +31,34 @@
                </font></Label>
          </children>
       </Pane>
-      <Label layoutX="88.0" layoutY="132.0" text="아이디" textAlignment="RIGHT">
+      <Label layoutX="88.0" layoutY="112.0" text="아이디" textAlignment="RIGHT">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <TextField fx:id="id" layoutX="145.0" layoutY="125.0" prefHeight="35.0" prefWidth="185.0" />
-      <Label fx:id="warnId" layoutX="100.0" layoutY="165.0" textFill="RED">
+      <TextField fx:id="id" layoutX="145.0" layoutY="105.0" prefHeight="35.0" prefWidth="185.0" />
+      <Label fx:id="warnId" layoutX="100.0" layoutY="145.0" textFill="RED">
          <font>
             <Font size="13.0" />
          </font></Label>
-      <Label layoutX="72.0" layoutY="192.0" text="비밀번호" textAlignment="RIGHT">
+      <Label layoutX="72.0" layoutY="172.0" text="비밀번호" textAlignment="RIGHT">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <PasswordField fx:id="pw" layoutX="145.0" layoutY="185.0" prefHeight="35.0" prefWidth="185.0" />
-      <Label fx:id="warnPw" layoutX="100.0" layoutY="225.0" textFill="RED">
+      <PasswordField fx:id="pw" layoutX="145.0" layoutY="165.0" prefHeight="35.0" prefWidth="185.0" />
+      <Label fx:id="warnPw" layoutX="100.0" layoutY="205.0" textFill="RED">
          <font>
             <Font size="13.0" />
          </font></Label>
-      <Label layoutX="88.0" layoutY="252.0" text="이메일" textAlignment="RIGHT">
+      <Label layoutX="88.0" layoutY="232.0" text="닉네임" textAlignment="RIGHT">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <TextField fx:id="email" layoutX="145.0" layoutY="245.0" prefHeight="35.0" prefWidth="185.0" />
+      <TextField fx:id="name" layoutX="145.0" layoutY="225.0" prefHeight="35.0" prefWidth="185.0" />
+      <Label fx:id="warnName" layoutX="100.0" layoutY="265.0" textFill="RED">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
       <Text fill="#a6625d" layoutX="195.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="◈" />
       <Line endX="300.0" endY="320.0" layoutY="-20.0" startX="100.0" startY="320.0" stroke="#a6625d" />
       <Label layoutX="104.0" layoutY="327.0" text="성별" textAlignment="RIGHT">

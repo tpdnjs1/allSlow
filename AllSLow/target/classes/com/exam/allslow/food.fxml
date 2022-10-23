@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -7,48 +8,106 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="background" prefHeight="500.0" prefWidth="370.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.FoodController">
+<AnchorPane id="background" prefHeight="500.0" prefWidth="370.0" stylesheets="@inner_view.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.FoodController">
    <children>
-      <Label layoutX="37.0" layoutY="6.0" text="Label" />
-      <DatePicker layoutX="26.0" layoutY="51.0" prefHeight="23.0" prefWidth="103.0" />
-      <Label layoutX="183.0" layoutY="6.0" text="Label" />
-      <ToggleButton layoutX="184.0" layoutY="30.0" mnemonicParsing="false" text="아침">
+      <Label layoutX="25.0" layoutY="10.0" text="날짜" />
+      <DatePicker layoutX="25.0" layoutY="55.0" prefHeight="23.0" prefWidth="139.0" />
+      <Label layoutX="180.0" layoutY="10.0" text="시간" />
+      <ToggleButton layoutX="180.0" layoutY="30.0" maxHeight="35.0" maxWidth="75.0" minHeight="35.0" minWidth="75.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="75.0" styleClass="btn" text="아침" textFill="WHITE">
          <graphic>
-            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/egg.png" />
+               </image>
+            </ImageView>
          </graphic>
+         <toggleGroup>
+            <ToggleGroup fx:id="group" />
+         </toggleGroup>
+         <padding>
+            <Insets right="10.0" />
+         </padding>
       </ToggleButton>
-      <ToggleButton layoutX="263.0" layoutY="30.0" mnemonicParsing="false" text="점심">
+      <ToggleButton layoutX="260.0" layoutY="30.0" maxHeight="35.0" maxWidth="75.0" minHeight="35.0" minWidth="75.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="75.0" styleClass="btn" text="점심" textFill="WHITE" toggleGroup="$group">
          <graphic>
-            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/sandwich.png" />
+               </image>
+            </ImageView>
          </graphic>
+         <padding>
+            <Insets right="10.0" />
+         </padding>
       </ToggleButton>
-      <ToggleButton layoutX="185.0" layoutY="74.0" mnemonicParsing="false" text="저녁">
+      <ToggleButton layoutX="180.0" layoutY="70.0" maxHeight="35.0" maxWidth="75.0" minHeight="35.0" minWidth="75.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="75.0" styleClass="btn" text="저녁" textFill="WHITE" toggleGroup="$group">
          <graphic>
-            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/beef.png" />
+               </image>
+            </ImageView>
          </graphic>
+         <padding>
+            <Insets right="10.0" />
+         </padding>
       </ToggleButton>
-      <ToggleButton layoutX="263.0" layoutY="74.0" mnemonicParsing="false" text="간식">
+      <ToggleButton layoutX="260.0" layoutY="70.0" maxHeight="35.0" maxWidth="75.0" minHeight="35.0" minWidth="75.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="75.0" styleClass="btn" text="간식" textFill="WHITE" toggleGroup="$group">
          <graphic>
-            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/cookie.png" />
+               </image>
+            </ImageView>
          </graphic>
+         <padding>
+            <Insets right="10.0" />
+         </padding>
       </ToggleButton>
-      <Label layoutX="37.0" layoutY="102.0" text="Label" />
-      <TabPane layoutX="22.0" layoutY="124.0" prefHeight="175.0" prefWidth="327.0" tabClosingPolicy="UNAVAILABLE">
+      <Label layoutX="25.0" layoutY="95.0" text="음식" />
+      <TabPane layoutX="20.0" layoutY="124.0" prefHeight="175.0" prefWidth="327.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Untitled Tab 2">
+          <Tab text="한식">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="162.0" prefWidth="327.0" />
             </content>
           </Tab>
-            <Tab text="Untitled Tab">
+            <Tab text="중식">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>
             </Tab>
-            <Tab text="Untitled Tab">
+            <Tab text="일식">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab text="양식">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab text="분식">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab text="제품">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab text="과일">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab text="기타">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>
@@ -56,7 +115,7 @@
         </tabs>
       </TabPane>
       <ListView layoutX="10.0" layoutY="320.0" prefHeight="138.0" prefWidth="346.0" />
-      <Button layoutX="159.0" layoutY="464.0" mnemonicParsing="false" text="저장하기" />
-      <Label layoutX="26.0" layoutY="299.0" text="Label" />
+      <Button layoutX="119.0" layoutY="464.0" mnemonicParsing="false" styleClass="btn" text="저장하기" />
+      <Button layoutX="192.0" layoutY="464.0" mnemonicParsing="false" styleClass="btn_new" text="삭제하기" />
    </children>
 </AnchorPane>

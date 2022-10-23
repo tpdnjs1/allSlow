@@ -16,12 +16,11 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        loadPage("exercise");
+        loadPage("calendar");
     }
 
     @FXML
     private BorderPane pane;
-
 
     @FXML
     private void calendarPage(MouseEvent event) {

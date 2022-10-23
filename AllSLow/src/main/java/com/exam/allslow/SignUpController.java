@@ -14,14 +14,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
-public class SignUpController implements Initializable {
+public class SignUpController{
 
     @FXML
     private TextField id;
     @FXML
     private PasswordField pw;
     @FXML
-    private TextField email;
+    private TextField name;
     @FXML
     private TextField age;
     @FXML
@@ -41,6 +41,8 @@ public class SignUpController implements Initializable {
     @FXML
     private Label warnPw;
     @FXML
+    private Label warnName;
+    @FXML
     private Label warnSex;
     @FXML
     private Label warnAge;
@@ -49,8 +51,8 @@ public class SignUpController implements Initializable {
     @FXML
     private Label warnWeight;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    @FXML
+    public void initialize() {
         sex.getItems().addAll("남성", "여성");
 
     }
@@ -74,20 +76,32 @@ public class SignUpController implements Initializable {
 
     private boolean warn;
 
+    public String uid;
+
     public void signUp() {
         canSignUp();
         if (!warn) {
-            String sql = "INSERT INTO `user`(`id`, `pw`, `email`, `sex`, `age`, `tall`, `weight`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO `user`(`id`, `pw`, `name`, `sex`, `age`, `tall`, `weight`) VALUES (?, ?, ?, ?, ?, ?, ?)";
             try {
                 pstmt = conn.prepareStatement(sql);
                 pstmt.setString(1, id.getText());
                 pstmt.setString(2, pw.getText());
-                pstmt.setString(3, email.getText());
+                pstmt.setString(3, name.getText());
                 pstmt.setString(4, sex.getValue());
                 pstmt.setString(5, age.getText());
                 pstmt.setString(6, tall.getText());
                 pstmt.setString(7, weight.getText());
                 pstmt.executeUpdate();
+
+                rs = pstmt.executeQuery();
+                sql = "SELECT * FROM `user` WHERE `id` = '" + id.getText() + "'";
+                try {
+                    pstmt = conn.prepareStatement(sql);
+                    rs = pstmt.executeQuery();
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+                uid = rs.getString("uid");
 
                 try {
                     Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
@@ -141,6 +155,15 @@ public class SignUpController implements Initializable {
             pass++;
         }
 
+        if (name.getText().isBlank()){
+            warnName.setText("*닉네임이 입력되지 않았습니다.");
+        }else if (name.getText().length() > 8){
+            warnName.setText("*닉네임은 8자를 넘을 수 없습니다.");
+        } else {
+            warnName.setText("");
+            pass++;
+        }
+
 
         if (sex.getValue() == null) {
             warnSex.setText("*성별이 선택되지 않았습니다.");
@@ -187,7 +210,7 @@ public class SignUpController implements Initializable {
             }
         }
 
-        if (pass == 6) {
+        if (pass == 7) {
             warn = false;
         } else {
             warn = true;
