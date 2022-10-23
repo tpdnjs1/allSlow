@@ -16,6 +16,14 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
 
+        stage.setOnCloseRequest(event -> {
+            terminate();
+        });
+
+    }
+
+    public static void terminate() {
+        System.exit(0);
     }
 
     public static void main(String[] args) {

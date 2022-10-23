@@ -2,19 +2,16 @@ package com.exam.allslow;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ResourceBundle;
 
-public class SignUpController{
+public class SignUpController {
 
     @FXML
     private TextField id;
@@ -73,6 +70,7 @@ public class SignUpController{
     Connection conn = db.getConnection();
     PreparedStatement pstmt = null;
     ResultSet rs = null;
+    String sql;
 
     private boolean warn;
 
@@ -81,7 +79,7 @@ public class SignUpController{
     public void signUp() {
         canSignUp();
         if (!warn) {
-            String sql = "INSERT INTO `user`(`id`, `pw`, `name`, `sex`, `age`, `tall`, `weight`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            sql = "INSERT INTO `user`(`id`, `pw`, `name`, `sex`, `age`, `tall`, `weight`) VALUES (?, ?, ?, ?, ?, ?, ?)";
             try {
                 pstmt = conn.prepareStatement(sql);
                 pstmt.setString(1, id.getText());
@@ -93,15 +91,16 @@ public class SignUpController{
                 pstmt.setString(7, weight.getText());
                 pstmt.executeUpdate();
 
-                rs = pstmt.executeQuery();
                 sql = "SELECT * FROM `user` WHERE `id` = '" + id.getText() + "'";
+
                 try {
                     pstmt = conn.prepareStatement(sql);
                     rs = pstmt.executeQuery();
-                } catch (Exception e){
+                    uid = rs.getString("uid");
+
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
-                uid = rs.getString("uid");
 
                 try {
                     Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
@@ -111,11 +110,12 @@ public class SignUpController{
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
+
 
     private void canSignUp() {
         int pass = 0;
@@ -133,11 +133,10 @@ public class SignUpController{
                 warnId.setText("");
                 pass++;
 
-                while (rs.next()) {
+                if (rs.next()) {
                     if (rs.getString("id").equals(id.getText())) {
                         warnId.setText("*동일한 아이디가 존재합니다.");
                         pass--;
-                        break;
                     }
                 }
             } catch (Exception e) {
@@ -155,9 +154,9 @@ public class SignUpController{
             pass++;
         }
 
-        if (name.getText().isBlank()){
+        if (name.getText().isBlank()) {
             warnName.setText("*닉네임이 입력되지 않았습니다.");
-        }else if (name.getText().length() > 8){
+        } else if (name.getText().length() > 8) {
             warnName.setText("*닉네임은 8자를 넘을 수 없습니다.");
         } else {
             warnName.setText("");
