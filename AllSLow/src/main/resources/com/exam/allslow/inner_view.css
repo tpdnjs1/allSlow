@@ -1,11 +1,11 @@
 .field {
-    -fx-background-color: #ffffff , #B1D3C5 , #B1D3C5;
+    -fx-background-color: #ffffff , #5FC48B, #5FC48B;
     -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
     -fx-text-fill: #FFFFFF;
 }
 
 .field:focused {
-    -fx-background-color: #ffffff , #B1D3C5 , #B1D3C5;
+    -fx-background-color: #ffffff , #5FC48B, #5FC48B;
     -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
     -fx-text-fill: #FFFFFF;
 }
@@ -50,7 +50,7 @@
 
 .round_new {
     -fx-background-radius: 50px;
-    -fx-background-color: #B1D3C5;
+    -fx-background-color: #5FC48B;
     -fx-text-fill: #ffffff;
 }
 

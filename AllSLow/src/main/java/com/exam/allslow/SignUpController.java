@@ -15,6 +15,7 @@ public class SignUpController {
 
     @FXML
     private TextField id;
+
     @FXML
     private PasswordField pw;
     @FXML
@@ -54,6 +55,8 @@ public class SignUpController {
 
     }
 
+
+
     public void backLgn() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("signIn.fxml"));
@@ -74,11 +77,13 @@ public class SignUpController {
 
     private boolean warn;
 
-    public String uid;
+
+    public String signId;
 
     public void signUp() {
         canSignUp();
         if (!warn) {
+            signId = id.getText();
             sql = "INSERT INTO `user`(`id`, `pw`, `name`, `sex`, `age`, `tall`, `weight`) VALUES (?, ?, ?, ?, ?, ?, ?)";
             try {
                 pstmt = conn.prepareStatement(sql);
@@ -90,17 +95,6 @@ public class SignUpController {
                 pstmt.setString(6, tall.getText());
                 pstmt.setString(7, weight.getText());
                 pstmt.executeUpdate();
-
-                sql = "SELECT * FROM `user` WHERE `id` = '" + id.getText() + "'";
-
-                try {
-                    pstmt = conn.prepareStatement(sql);
-                    rs = pstmt.executeQuery();
-                    uid = rs.getString("uid");
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
 
                 try {
                     Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
@@ -120,6 +114,7 @@ public class SignUpController {
     private void canSignUp() {
         int pass = 0;
 
+
         if (id.getText().isBlank()) {
             warnId.setText("*아이디가 입력되지 않았습니다.");
         } else if (id.getText().length() > 20) {
@@ -129,20 +124,18 @@ public class SignUpController {
             try {
                 pstmt = conn.prepareStatement(sql);
                 rs = pstmt.executeQuery();
-
                 warnId.setText("");
                 pass++;
-
                 if (rs.next()) {
                     if (rs.getString("id").equals(id.getText())) {
                         warnId.setText("*동일한 아이디가 존재합니다.");
                         pass--;
                     }
+                    rs.close();
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
         }
 
         if (pw.getText().isBlank()) {
