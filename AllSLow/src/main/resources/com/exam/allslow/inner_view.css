@@ -87,3 +87,32 @@
 .hyperlink:hover{
     -fx-text-fill: #88F2B4;
 }
+
+.ListView_CSS {
+    -fx-text-fill         : black;
+    -fx-font-size         : 12pt  ;
+    /*-fx-font-style        : italic;
+    -fx-font-weight       : bold;
+    -fx-alignment         : center;*/
+    -fx-background-color  : #ffffff;
+}
+
+/*.ListView_CSS .list-cell {
+    -fx-background-color  : #5FC48B;
+}*/
+
+.ListView_CSS .list-cell:filled {
+    -fx-background-color  : pink;
+}
+
+.ListView_CSS .list-cell:selected {
+    -fx-background-color  : silver;
+}
+
+.ListView_CSS .list-cell:focused {
+    -fx-background-color  : blue;
+}
+
+.ListView_CSS .list-cell:filled:hover {
+    -fx-effect: innershadow(three-pass-box, rgba(0,0,0,0.7), 6, 0.0 , 0 , 2);
+}

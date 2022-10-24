@@ -39,8 +39,9 @@ public class SettingController {
     String sql;
 
 
-    MainController main = new MainController();
-    private final String uid = main.uid;
+
+    UserDAO dao = new UserDAO();
+    private final String uid = dao.id;
 
     public void update() {
         check();

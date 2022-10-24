@@ -28,7 +28,7 @@ public class SignInController implements Initializable {
     @FXML
     private Label hyperlink;
 
-    public String uid;
+    public String id_;
     public boolean wentToLgn = false;
 
     @Override
@@ -51,26 +51,12 @@ public class SignInController implements Initializable {
                 pstmt = conn.prepareStatement(sql);
                 rs = pstmt.executeQuery();
                 while (rs.next()) {
-                    uid = rs.getString("uid");
                     if (rs.getString("id").equals(id.getText()) && rs.getString("pw").equals(pw.getText())) {
                         pass = false;
+                        wentToLgn = true;
+                        id_ = id.getText();
+
                         try {
-                            sql = "SELECT * FROM `user` WHERE `id` = '" + id.getText() + "'";
-                            try {
-                                pstmt = conn.prepareStatement(sql);
-                                rs = pstmt.executeQuery();
-
-                            } catch (Exception e){
-                                e.printStackTrace();
-                            }
-                            try {
-
-                            }catch (Exception e){
-                                e.printStackTrace();
-                                break;
-                            }
-                            wentToLgn = true;
-
                             Parent parent = FXMLLoader.load(getClass().getResource("main.fxml"));
                             Scene scene = new Scene(parent);
                             Stage stage = (Stage) loginBtn.getScene().getWindow();
@@ -81,6 +67,7 @@ public class SignInController implements Initializable {
                         }
                     }
                 }
+                rs.close();
 
             } catch (Exception e) {
                 e.printStackTrace();

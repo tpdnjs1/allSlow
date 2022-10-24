@@ -11,25 +11,24 @@ public class UserDAO {
     PreparedStatement pstmt = null;
     ResultSet rs = null;
 
-    public void checkId(String checkingId){
-        String sql = "SELECT * FROM `user` WHERE `id` '= " + checkingId + "'";
-        try {
-            pstmt = conn.prepareStatement(sql);
-            rs = pstmt.executeQuery();
-            System.out.println("조회성공");
-        } catch (Exception e){
-            System.out.println(" ");
-        }
-    }
+    SignUpController suCon = new SignUpController();
+    SignInController siCon = new SignInController();
 
-    public void checkPw(String checkingPw){
-        String sql = "SELECT * FROM `user` WHERE `pw` '= " + checkingPw + "'";
-        try {
-            pstmt = conn.prepareStatement(sql);
-            rs = pstmt.executeQuery();
-        } catch (Exception e) {
-            System.out.println(" ");
-        }
+    String id;
 
+    public void what(){
+        if (siCon.wentToLgn) {
+            id= siCon.id_;
+        } else {
+            String sql = "SELECT * FROM `user` WHERE `id` = '" + suCon.signId + "'";
+            try {
+                pstmt = conn.prepareStatement(sql);
+                rs = pstmt.executeQuery();
+                id=rs.getString("id");
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

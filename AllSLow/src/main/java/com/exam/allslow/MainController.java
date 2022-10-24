@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 
@@ -17,48 +18,10 @@ import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
-    DBManager db = new DBManager();
-    Connection conn = db.getConnection();
-    PreparedStatement pstmt = null;
-    ResultSet rs = null;
-
-    SignUpController suCon = new SignUpController();
-    SignInController siCon = new SignInController();
-
-    public String uid;
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadPage("calendar");
-        if (siCon.wentToLgn) {
-            uid = siCon.uid;
-        } else {
-            String sql = "SELECT * FROM `user` WHERE `id` = '" + suCon.signId + "'";
-            try {
-                pstmt = conn.prepareStatement(sql);
-                rs = pstmt.executeQuery();
-                if (rs.getString("uid").isBlank()){
-                    for (int checkUid = 0; rs.next(); checkUid++){
-                        sql = "SELECT * FROM `user` WHERE `uid` = '" + checkUid + "'";
-                        try {
-                            pstmt = conn.prepareStatement(sql);
-                            rs = pstmt.executeQuery();
-                            if (!rs.getString("uid").equals(checkUid)){
-                                continue;
-                            }
-                            uid = checkUid+"";
-                            break;
-                        } catch (Exception e){
-                            e.printStackTrace();
-                        }
-                    }
-                    rs.close();
-                } else uid = rs.getString("uid");
 
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
     }
 
     @FXML
