@@ -41,7 +41,8 @@ public class SettingController {
 
 
     UserDAO dao = new UserDAO();
-    private final String uid = dao.id;
+
+    private String uid ;
 
     public void update() {
         check();

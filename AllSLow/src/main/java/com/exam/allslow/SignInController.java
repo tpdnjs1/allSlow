@@ -28,7 +28,6 @@ public class SignInController implements Initializable {
     @FXML
     private Label hyperlink;
 
-    public String id_;
     public boolean wentToLgn = false;
 
     @Override
@@ -37,13 +36,15 @@ public class SignInController implements Initializable {
 
     }
 
+    UserDAO dao = new UserDAO();
+
     public void login() {
         if (id.getText().isEmpty() || pw.getText().isEmpty()) alert("", "아이디 혹은 비밀번호가 입력되지 않았습니다.");
         else {
             DBManager db = new DBManager();
             Connection conn = db.getConnection();
-            PreparedStatement pstmt = null;
-            ResultSet rs = null;
+            PreparedStatement pstmt;
+            ResultSet rs;
 
             String sql = "SELECT * FROM `user` WHERE `id` = '" + id.getText() + "' AND `pw` = '" + pw.getText() + "'";
             Boolean pass = true;
@@ -51,10 +52,10 @@ public class SignInController implements Initializable {
                 pstmt = conn.prepareStatement(sql);
                 rs = pstmt.executeQuery();
                 while (rs.next()) {
+                    dao.setUid(rs.getString("uid"));
                     if (rs.getString("id").equals(id.getText()) && rs.getString("pw").equals(pw.getText())) {
                         pass = false;
                         wentToLgn = true;
-                        id_ = id.getText();
 
                         try {
                             Parent parent = FXMLLoader.load(getClass().getResource("main.fxml"));

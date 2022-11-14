@@ -56,7 +56,6 @@ public class SignUpController {
     }
 
 
-
     public void backLgn() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("signIn.fxml"));
@@ -77,13 +76,12 @@ public class SignUpController {
 
     private boolean warn;
 
+    UserDAO dao = new UserDAO();
 
-    public String signId;
 
     public void signUp() {
         canSignUp();
         if (!warn) {
-            signId = id.getText();
             sql = "INSERT INTO `user`(`id`, `pw`, `name`, `sex`, `age`, `tall`, `weight`) VALUES (?, ?, ?, ?, ?, ?, ?)";
             try {
                 pstmt = conn.prepareStatement(sql);
@@ -96,11 +94,24 @@ public class SignUpController {
                 pstmt.setString(7, weight.getText());
                 pstmt.executeUpdate();
 
+                sql = "SELECT * FROM `user` WHERE `id` = '" + id.getText() + "'";
                 try {
-                    Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
-                    Scene scene = new Scene(root);
-                    Stage stage = (Stage) signUpBtn.getScene().getWindow();
-                    stage.setScene(scene);
+                    pstmt = conn.prepareStatement(sql);
+                    rs = pstmt.executeQuery();
+                    if (rs.next()) {
+                        dao.setUid(rs.getString("uid"));
+                        if (rs.getString("uid").equals(dao.getUid())) {
+                            try {
+                                Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
+                                Scene scene = new Scene(root);
+                                Stage stage = (Stage) signUpBtn.getScene().getWindow();
+                                stage.setScene(scene);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                    rs.close();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -113,7 +124,6 @@ public class SignUpController {
 
     private void canSignUp() {
         int pass = 0;
-
 
         if (id.getText().isBlank()) {
             warnId.setText("*아이디가 입력되지 않았습니다.");
@@ -207,6 +217,7 @@ public class SignUpController {
         } else {
             warn = true;
         }
+
     }
 
 

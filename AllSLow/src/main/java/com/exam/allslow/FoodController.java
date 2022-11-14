@@ -9,7 +9,10 @@ import javafx.scene.Group;
 import javafx.scene.control.*;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -43,14 +46,16 @@ public class FoodController implements Initializable {
         group = new ToggleGroup();
         items = FXCollections.observableArrayList();
         list.setItems(items);
+        dbConnList.add(0, "null");
     }
-
-
 
     public void addEat(){
         String stName = name.getText();
         if (name.getText().isBlank()){
             alert("", "음식의 이름이 입력되지않았습니다.");
+            return;
+        } else if (name.getText().length() > 20){
+            alert("", "음식의 이름은 20자를 넘을 수 없습니다.");
             return;
         }
 
@@ -95,18 +100,63 @@ public class FoodController implements Initializable {
         }
 
         WhatEat whatEat = new WhatEat(stName, stCal, lcDate, time);
-        items.add(whatEat);
+        try {
+            items.add(whatEat);
+            dbConnList.add(lcDate.toString());
+        } catch(Exception e){
+            alert("", "날짜를 다시 입력해주십시오,");
+            return;
+        }
 
+        dbConnList.add(stName);
+        dbConnList.add(stCal);
+        dbConnList.add(time);
+
+        date.setValue(null);
+        name.setText("");
+        calorie.setText("");
+        breakfast.setSelected(false);
+        lunch.setSelected(false);
+        dinner.setSelected(false);
+        snack.setSelected(false);
     }
 
-    public  void delWhatEat(){
+    ArrayList<String> dbConnList = new ArrayList<String>();
+
+
+    public void delWhatEat(){
         int idx = list.getSelectionModel().getSelectedIndex();
-        if (idx >= 0){
+        if (idx == 0){
+            items.remove(idx);
+        } else if (idx > 0){
             items.remove(idx);
         } else {
             alert("", "삭제할 아이템이 선택되지않았습니다.");
         }
     }
+
+    UserDAO dao = new UserDAO();
+    DBManager db = new DBManager();
+    Connection conn = db.getConnection();
+    PreparedStatement pstmt = null;
+
+
+    public void saveInDb(){
+        int idx = list.getSelectionModel().getSelectedIndex();
+        if (idx >= 0){
+            String sql = "INSERT INTO `food`(`uid`, `name`, `calorie`, `date`, `time`) VALUES (?, ?, ?, ?, ?)";
+            try {
+
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        } else {
+            alert("", "저장할 아이템이 선택되지않았습니다.");
+        }
+    }
+
+
+
 
     public void alert(String msg, String header) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

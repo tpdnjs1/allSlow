@@ -41,16 +41,7 @@ public class ExerciseController {
 
     @FXML
     private void initialize() {
-        try {
-            pstmt = conn.prepareStatement(sql);
-            rs = pstmt.executeQuery();
-            while (rs.next()) {
-                exerciseType.getItems().add(rs.getString("type"));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        thread = new CountThread(hour, minute, second, 12000, calorie);
+        thread = new CountThread(hour, minute, second, 0, calorie);
     }
 
     String dbType = exerciseType.getValue();

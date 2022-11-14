@@ -1,5 +1,8 @@
 package com.exam.allslow;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.time.LocalDate;
 
 public class WhatEat {
@@ -46,6 +49,12 @@ public class WhatEat {
     public void setTime(String time) {
         this.time = time;
     }
+
+    @Override
+    public String toString() {
+        return "음식 : "+ name + ", 칼로리 : " + calorie + ", 날짜 : " + date + ", 시간 : " + time;
+    }
+
 
 
 }

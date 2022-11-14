@@ -13,13 +13,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="background" prefHeight="500.0" prefWidth="370.0" stylesheets="@inner_view.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.FoodController">
+<AnchorPane id="background" prefHeight="500.0" prefWidth="370.0" stylesheets="@inner_view.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.FoodController">
    <children>
       <Label layoutX="25.0" layoutY="10.0" text="날짜">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <DatePicker fx:id="date" layoutX="25.0" layoutY="55.0" prefHeight="23.0" prefWidth="139.0" />
+      <DatePicker fx:id="date" layoutX="25.0" layoutY="55.0" prefHeight="25.0" prefWidth="140.0" />
       <Label layoutX="180.0" layoutY="10.0" text="시간">
          <font>
             <Font size="14.0" />
@@ -75,22 +75,23 @@
             <Insets right="5.0" />
          </padding>
       </ToggleButton>
-      <Label layoutX="67.0" layoutY="131.0" text="음식">
+      <Label layoutX="75.0" layoutY="130.0" text="음식">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label layoutX="106.0" layoutY="170.0" text="이름" />
-      <TextField fx:id="name" layoutX="137.0" layoutY="160.0" prefHeight="35.0" prefWidth="150.0" />
-      <Label layoutX="96.0" layoutY="214.0" text="칼로리" />
-      <TextField fx:id="calorie" layoutX="137.0" layoutY="204.0" prefHeight="35.0" prefWidth="150.0" />
-      <Button layoutX="255.0" layoutY="250.0" mnemonicParsing="false" onAction="#addEat" styleClass="btn_new" text="기록하기" />
-      <ListView fx:id="list" layoutX="12.0" layoutY="301.0" prefHeight="138.0" prefWidth="346.0" />
-      <Button layoutX="90.0" layoutY="450.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="75.0" styleClass="btn" text="저장하기" />
+      <Label layoutX="101.0" layoutY="170.0" text="이름" />
+      <TextField fx:id="name" layoutX="130.0" layoutY="160.0" prefHeight="35.0" prefWidth="150.0" />
+      <Label layoutX="91.0" layoutY="214.0" text="칼로리" />
+      <TextField fx:id="calorie" layoutX="130.0" layoutY="200.0" prefHeight="35.0" prefWidth="150.0" promptText="kcal" />
+      <Button layoutX="255.0" layoutY="240.0" mnemonicParsing="false" onAction="#addEat" styleClass="btn_new" text="기록하기" />
+      <ListView fx:id="list" layoutX="15.0" layoutY="300.0" prefHeight="140.0" prefWidth="340.0" />
+      <Button layoutX="90.0" layoutY="450.0" mnemonicParsing="false" onAction="#saveInDb" prefHeight="35.0" prefWidth="75.0" styleClass="btn" text="수정하기" />
       <Button layoutX="205.0" layoutY="450.0" mnemonicParsing="false" onAction="#delWhatEat" prefHeight="35.0" prefWidth="75.0" styleClass="btn_new" text="삭제하기" />
       <Label layoutX="25.0" layoutY="275.0" text="기록">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
+      <Button layoutX="110.0" layoutY="85.0" mnemonicParsing="false" onAction="#addEat" styleClass="btn_new" text="조회하기" />
    </children>
 </AnchorPane>
