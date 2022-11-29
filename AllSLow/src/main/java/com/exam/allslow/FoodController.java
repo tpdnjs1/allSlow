@@ -27,7 +27,7 @@ public class FoodController implements Initializable {
     @FXML
     private ToggleButton snack;
     @FXML
-    private ToggleGroup group;
+    private ToggleGroup group = new ToggleGroup();
     @FXML
     private DatePicker date;
     @FXML
@@ -43,7 +43,7 @@ public class FoodController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        group = new ToggleGroup();
+
         items = FXCollections.observableArrayList();
         list.setItems(items);
         dbConnList.add(0, "null");
