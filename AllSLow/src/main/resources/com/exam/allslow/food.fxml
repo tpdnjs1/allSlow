@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="background" prefHeight="500.0" prefWidth="370.0" stylesheets="@inner_view.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.FoodController">
+<AnchorPane id="background" prefHeight="500.0" prefWidth="370.0" stylesheets="@inner_view.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exam.allslow.FoodController">
    <children>
       <Label layoutX="25.0" layoutY="10.0" text="날짜">
          <font>
